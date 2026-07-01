@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export const metadata: Metadata = {
   title: "NEXUS // SYSTEMS — High-Precision Digital Engines",
@@ -13,8 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className="relative">
+        <AnimatedBackground />
+        <div className="noise-overlay" />
+        <main className="relative z-10">{children}</main>
+      </body>
     </html>
   );
 }
