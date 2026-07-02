@@ -1,6 +1,6 @@
-# NEXUS // SYSTEMS — Next.js Clone
+# RABNIX — Next.js Clone
 
-A pixel-close clone of the NEXUS Systems landing page, rebuilt in Next.js (App Router) + Tailwind CSS v4.
+A pixel-close clone of the RABNIX landing page, rebuilt in Next.js (App Router) + Tailwind CSS v4.
 
 ## Design tokens (matched from the source site)
 

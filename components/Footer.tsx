@@ -14,7 +14,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <div className="h-5 w-5 bg-[#D4FF00] shadow-[0_0_10px_rgba(212,255,0,0.4)] rounded-sm" />
                 <span className="font-serif-agency text-xl tracking-widest font-light text-white">
-                  NEXUS <span className="text-[#D4FF00]">// SYSTEMS</span>
+                  RABNIX
                 </span>
               </div>
               <p className="text-xs text-zinc-600 max-w-sm leading-relaxed font-mono-agency">
@@ -81,14 +81,9 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] text-zinc-700 font-mono-agency">
-          <span>© {year} NEXUS SYSTEMS LTD. ALL SYSTEMS NOMINAL.</span>
-          <div className="flex items-center space-x-4">
-            <span className="text-zinc-800">v4.8.0</span>
-            <span className="text-zinc-800">|</span>
-            <span className="flex items-center gap-1">
-              <Terminal className="h-3 w-3" />
-              BUILT WITH NEXT.JS + CLAUDE
-            </span>
+          <span>© {year} RABNIX. ALL SYSTEMS NOMINAL.</span>
+          <div className="flex items-center gap-1">
+            <Terminal className="h-3 w-3 text-zinc-800" />
           </div>
         </div>
       </div>

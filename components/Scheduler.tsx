@@ -56,6 +56,11 @@ export default function Scheduler() {
   );
   const [selectedDay, setSelectedDay] = useState(initial.getDate());
   const [selectedSlot, setSelectedSlot] = useState(TIME_SLOTS[0]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [service, setService] = useState(SERVICES[0]);
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const monthLabel = viewDate.toLocaleString("en-US", {
     month: "long",
@@ -81,6 +86,38 @@ export default function Scheduler() {
   const nextMonth = () =>
     setViewDate(new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1));
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setStatus("idle");
+
+    try {
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          service,
+          date: selectedLabel,
+          timeSlot: selectedSlot,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed to submit");
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setService(SERVICES[0]);
+      setSelectedSlot(TIME_SLOTS[0]);
+    } catch {
+      setStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="booking-section"
@@ -104,7 +141,7 @@ export default function Scheduler() {
 
         <ScrollReveal variant="fade-up" delay={200}>
           <div className="glass-strong rounded-lg p-6 md:p-10 max-w-5xl mx-auto">
-            <form className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* Calendar */}
               <div className="lg:col-span-5 space-y-6 flex flex-col items-center">
                 <span className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold self-start flex items-center gap-2">
@@ -175,7 +212,10 @@ export default function Scheduler() {
                     <Clock className="h-3 w-3" /> [ Step 2 ] Define Service Vector
                   </span>
                   <div className="relative">
-                    <select className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none focus:border-[#D4FF00] transition-colors w-full text-white cursor-pointer h-11 appearance-none">
+                    <select
+                      value={service}
+                      onChange={(e) => setService(e.target.value)}
+                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none focus:border-[#D4FF00] transition-colors w-full text-white cursor-pointer h-11 appearance-none">
                       {SERVICES.map((s) => (
                         <option key={s} value={s} className="bg-[#121212] text-white">
                           {s}
@@ -217,6 +257,8 @@ export default function Scheduler() {
                       <input
                         required
                         type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         placeholder="Jane Doe"
                         className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                       />
@@ -230,6 +272,8 @@ export default function Scheduler() {
                       <input
                         required
                         type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         placeholder="jane@operator.com"
                         className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                       />
@@ -237,12 +281,24 @@ export default function Scheduler() {
                   </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-all duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)]"
-                >
-                  EXECUTE_SCHEDULER.MSI
-                </button>
+                {status === "success" ? (
+                  <div className="w-full py-4 font-bold uppercase tracking-wider text-xs rounded bg-[#D4FF00]/10 border border-[#D4FF00]/30 text-[#D4FF00] text-center">
+                    ✓ Booking Submitted — Check Your Email
+                  </div>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-all duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? "TRANSMITTING..." : "EXECUTE_SCHEDULER.MSI"}
+                  </button>
+                )}
+                {status === "error" && (
+                  <p className="text-xs text-red-400 text-center">
+                    Failed to send. Please try again or email us directly.
+                  </p>
+                )}
               </div>
             </form>
           </div>

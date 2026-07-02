@@ -28,6 +28,41 @@ const BUDGETS = ["< $10k", "$10k - $30k", "$30k - $100k", "$100k+"];
 
 export default function Intake() {
   const [budget, setBudget] = useState(BUDGETS[0]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [service, setService] = useState(SERVICES[0]);
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setStatus("idle");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, company, service, budget, message }),
+      });
+
+      if (!res.ok) throw new Error("Failed to submit");
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setCompany("");
+      setService(SERVICES[0]);
+      setBudget(BUDGETS[0]);
+      setMessage("");
+    } catch {
+      setStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section
@@ -70,7 +105,7 @@ export default function Intake() {
         {/* Right form */}
         <ScrollReveal variant="slide-right" delay={200} className="lg:col-span-8">
           <div className="glass-strong rounded-lg p-6 md:p-10">
-            <form className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold block flex items-center gap-2">
@@ -80,6 +115,8 @@ export default function Intake() {
                     <input
                       required
                       type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       placeholder="John Doe"
                       className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                     />
@@ -94,6 +131,8 @@ export default function Intake() {
                     <input
                       required
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="john@organization.com"
                       className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                     />
@@ -110,6 +149,8 @@ export default function Intake() {
                   <div className="relative border-b border-white/20 focus-within:border-[#D4FF00] transition-all duration-300">
                     <input
                       type="text"
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
                       placeholder="Corp Inc. (Optional)"
                       className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                     />
@@ -121,7 +162,10 @@ export default function Intake() {
                     <ListChecks className="h-3 w-3" /> Inquiry Vector
                   </label>
                   <div className="relative">
-                    <select className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none focus:border-[#D4FF00] transition-colors w-full text-white cursor-pointer h-11 appearance-none">
+                    <select
+                      value={service}
+                      onChange={(e) => setService(e.target.value)}
+                      className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none focus:border-[#D4FF00] transition-colors w-full text-white cursor-pointer h-11 appearance-none">
                       {SERVICES.map((s) => (
                         <option key={s} value={s} className="bg-[#121212] text-white">
                           {s}
@@ -162,6 +206,8 @@ export default function Intake() {
                 <div className="relative border border-white/20 focus-within:border-[#D4FF00] rounded transition-all duration-300 p-0.5">
                   <textarea
                     required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     rows={4}
                     placeholder="Outline key systems, specifications, user volumes, and necessary integrations..."
                     className="bg-transparent border-0 rounded px-3 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600 resize-none"
@@ -169,13 +215,25 @@ export default function Intake() {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-all duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] flex items-center justify-center gap-2"
-              >
-                <Send className="h-3 w-3" />
-                TRANSMIT_INQUIRY.SH
-              </button>
+              {status === "success" ? (
+                <div className="w-full py-4 font-bold uppercase tracking-wider text-xs rounded bg-[#D4FF00]/10 border border-[#D4FF00]/30 text-[#D4FF00] text-center">
+                  ✓ Inquiry Sent — We&rsquo;ll Respond Within 24 Hours
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-all duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  <Send className="h-3 w-3" />
+                  {submitting ? "TRANSMITTING..." : "TRANSMIT_INQUIRY.SH"}
+                </button>
+              )}
+              {status === "error" && (
+                <p className="text-xs text-red-400 text-center">
+                  Failed to send. Please try again or email us directly.
+                </p>
+              )}
             </form>
           </div>
         </ScrollReveal>

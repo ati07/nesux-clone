@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
-  { label: "01 / Services", href: "#services-section" },
-  { label: "02 / Booking", href: "#booking-section" },
-  { label: "03 / Inquiries", href: "#contact-section" },
-  { label: "04 / Terminal", href: "#terminal-section" },
+  { label: "Services", href: "#services-section" },
+  { label: "Pricing", href: "#pricing-section" },
+  { label: "Booking", href: "#booking-section" },
+  { label: "Contact", href: "#contact-section" },
 ];
 
 export default function Navbar() {
@@ -33,7 +33,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center space-x-3 group">
           <div className="h-5 w-5 bg-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.6)] animate-glow-pulse rounded-sm" />
           <span className="font-serif-agency text-xl md:text-2xl tracking-widest font-light text-white">
-            NEXUS <span className="text-[#D4FF00]">// SYSTEMS</span>
+            RABNIX
           </span>
         </a>
 
