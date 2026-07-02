@@ -1,5 +1,6 @@
 import { Terminal } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import Logo from "./Logo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -11,12 +12,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/5">
             {/* Brand */}
             <div className="md:col-span-5 space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="h-5 w-5 bg-[#D4FF00] shadow-[0_0_10px_rgba(212,255,0,0.4)] rounded-sm" />
-                <span className="font-serif-agency text-xl tracking-widest font-light text-white">
-                  RABNIX
-                </span>
-              </div>
+              <Logo showTagline />
               <p className="text-xs text-zinc-600 max-w-sm leading-relaxed font-mono-agency">
                 High-precision digital engineering for the modern AI era.
                 Bespoke systems, autonomous agents, and enterprise-grade

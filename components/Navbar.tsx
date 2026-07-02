@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const NAV_ITEMS = [
   { label: "Services", href: "#services-section" },
@@ -29,13 +30,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 md:px-12 py-4 md:py-5 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center space-x-3 group">
-          <div className="h-5 w-5 bg-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.6)] animate-glow-pulse rounded-sm" />
-          <span className="font-serif-agency text-xl md:text-2xl tracking-widest font-light text-white">
-            RABNIX
-          </span>
-        </a>
+        <Logo />
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase text-zinc-400">

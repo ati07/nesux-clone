@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "RABNIX — High-Precision Digital Engines",
   description:
     "RABNIX is an elite digital engineering firm. We construct bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces that operate at peak efficiency.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
