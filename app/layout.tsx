@@ -66,6 +66,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  other: {
+    "article:published_time": "2025-01-01T00:00:00Z",
+    "article:modified_time": "2026-07-02T00:00:00Z",
+  },
 };
 
 export default function RootLayout({

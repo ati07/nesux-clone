@@ -10,6 +10,8 @@ export default function JsonLd() {
     slogan: "High-Precision Digital Engines",
     email: "hello@rabnix.com",
     foundingDate: "2025",
+    datePublished: "2025-01-01T00:00:00Z",
+    dateModified: "2026-07-02T00:00:00Z",
     sameAs: [],
     knowsAbout: [
       "Web Development",
