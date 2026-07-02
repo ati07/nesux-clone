@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     url: BASE_URL,
     images: [
       {
-        url: "/Full Logo-old.png",
+        url: "/rabnix-og.svg",
         width: 1200,
         height: 630,
-        alt: "RABNIX",
+        alt: "RABNIX — High-Precision Digital Engines",
       },
     ],
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "RABNIX — High-Precision Digital Engines",
     description:
       "Bespoke websites, CRM platforms, custom software, and AI Agent workforces engineered for peak efficiency.",
-    images: ["/Full Logo-old.png"],
+    images: ["/rabnix-og.svg"],
   },
   robots: {
     index: true,

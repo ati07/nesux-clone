@@ -4,7 +4,7 @@ export default function JsonLd() {
     "@type": "Organization",
     name: "RABNIX",
     url: "https://rabnix.com",
-    logo: "https://rabnix.com/Full Logo-old.png",
+    logo: "https://rabnix.com/Full Logo.png",
     description:
       "An elite digital engineering firm constructing bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces.",
     slogan: "High-Precision Digital Engines",
