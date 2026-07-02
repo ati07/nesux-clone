@@ -76,6 +76,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="relative">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <JsonLd />
         <AnimatedBackground />
         <div className="noise-overlay" />

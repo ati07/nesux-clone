@@ -153,6 +153,7 @@ export default function Scheduler() {
                     <button
                       type="button"
                       onClick={prevMonth}
+                      aria-label="Previous month"
                       className="text-zinc-500 hover:text-[#D4FF00] transition-colors p-1"
                     >
                       <ChevronLeft className="h-4 w-4" />
@@ -161,6 +162,7 @@ export default function Scheduler() {
                     <button
                       type="button"
                       onClick={nextMonth}
+                      aria-label="Next month"
                       className="text-zinc-500 hover:text-[#D4FF00] transition-colors p-1"
                     >
                       <ChevronRight className="h-4 w-4" />
@@ -215,6 +217,7 @@ export default function Scheduler() {
                     <select
                       value={service}
                       onChange={(e) => setService(e.target.value)}
+                      aria-label="Service type"
                       className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none focus:border-[#D4FF00] transition-colors w-full text-white cursor-pointer h-11 appearance-none">
                       {SERVICES.map((s) => (
                         <option key={s} value={s} className="bg-[#121212] text-white">
