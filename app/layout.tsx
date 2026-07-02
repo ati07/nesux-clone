@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description:
     "RABNIX is an elite digital engineering firm. We construct bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces that operate at peak efficiency.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/robix logo (1).png",
+    shortcut: "/robix logo (1).png",
   },
 };
 
