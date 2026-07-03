@@ -3,15 +3,15 @@ import "./globals.css";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = "https://rabnix.com";
+const BASE_URL = "https://rabnexus.com";
 
 export const metadata: Metadata = {
   title: {
-    default: "RABNIX — High-Precision Digital Engines",
-    template: "%s | RABNIX",
+    default: "RABNEXUS — High-Precision Digital Engines",
+    template: "%s | RABNEXUS",
   },
   description:
-    "RABNIX is an elite digital engineering firm. We construct bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces that operate at peak efficiency.",
+    "RABNEXUS is an elite digital engineering firm. We construct bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces that operate at peak efficiency.",
   metadataBase: new URL(BASE_URL),
   icons: {
     icon: "/robix logo (1).png",
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "RABNIX",
-    title: "RABNIX — High-Precision Digital Engines",
+    siteName: "RABNEXUS",
+    title: "RABNEXUS — High-Precision Digital Engines",
     description:
       "Bespoke websites, CRM platforms, custom software, and AI Agent workforces engineered for peak efficiency.",
     url: BASE_URL,
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
         url: "/robix logo (1).png",
         width: 203,
         height: 206,
-        alt: "RABNIX — High-Precision Digital Engines",
+        alt: "RABNEXUS — High-Precision Digital Engines",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RABNIX — High-Precision Digital Engines",
+    title: "RABNEXUS — High-Precision Digital Engines",
     description:
       "Bespoke websites, CRM platforms, custom software, and AI Agent workforces engineered for peak efficiency.",
     images: ["/robix logo (1).png"],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     "automation",
     "AI automation",
     "bespoke websites",
-    "RABNIX",
+    "RABNEXUS",
   ],
   alternates: {
     canonical: BASE_URL,

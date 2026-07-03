@@ -1,27 +1,27 @@
-# RABNIX
+# RABNEXUS
 
 > An elite digital engineering firm. We construct bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces that operate at peak efficiency.
 
 ## About
 
-RABNIX engineers high-precision digital systems for organizations across defense, finance, health, energy, edtech, logistics, retail, government, and media sectors. Founded in 2025, we have deployed 50+ engineered systems across 12 industries. [Learn more](https://rabnix.com)
+RABNEXUS engineers high-precision digital systems for organizations across defense, finance, health, energy, edtech, logistics, retail, government, and media sectors. Founded in 2025, we have deployed 50+ engineered systems across 12 industries. [Learn more](https://rabnexus.com)
 
 ## Services
 
-- [Web Development](https://rabnix.com/#services-section) — Bespoke high-performance web systems engineered for maximum conversion using React, Next.js, and FastAPI.
-- [CRM Development](https://rabnix.com/#services-section) — Tailored hub architectures that centralize operations, automate lead routing, and provide granular analytics.
-- [AI Workflow Automation](https://rabnix.com/#services-section) — Custom agent chains that automate complex workflows end-to-end using n8n, Make, and custom middleware.
-- [AI Agents](https://rabnix.com/#services-section) — Self-optimizing autonomous digital workforce utilizing cutting-edge LLMs (GPT, Claude, Gemini) to handle support, research, and operations.
-- [Custom Software](https://rabnix.com/#services-section) — Full-stack applications, dashboards, and internal tools built to spec.
-- [Digital Marketing](https://rabnix.com/#services-section) — Data-driven campaigns optimized for conversion across search and social.
-- [Enterprise Integrations](https://rabnix.com/#services-section) — Connect disparate tools into a unified operational layer.
+- [Web Development](https://rabnexus.com/#services-section) — Bespoke high-performance web systems engineered for maximum conversion using React, Next.js, and FastAPI.
+- [CRM Development](https://rabnexus.com/#services-section) — Tailored hub architectures that centralize operations, automate lead routing, and provide granular analytics.
+- [AI Workflow Automation](https://rabnexus.com/#services-section) — Custom agent chains that automate complex workflows end-to-end using n8n, Make, and custom middleware.
+- [AI Agents](https://rabnexus.com/#services-section) — Self-optimizing autonomous digital workforce utilizing cutting-edge LLMs (GPT, Claude, Gemini) to handle support, research, and operations.
+- [Custom Software](https://rabnexus.com/#services-section) — Full-stack applications, dashboards, and internal tools built to spec.
+- [Digital Marketing](https://rabnexus.com/#services-section) — Data-driven campaigns optimized for conversion across search and social.
+- [Enterprise Integrations](https://rabnexus.com/#services-section) — Connect disparate tools into a unified operational layer.
 
 ## Pricing
 
-One-time packages starting from $299 (Launch) to $1,199 (Revenue Engine). All packages include SSL, analytics, free domain and hosting (1 year), and 6 months post-delivery support. [View pricing](https://rabnix.com/#pricing-section)
+One-time packages starting from $299 (Launch) to $1,199 (Revenue Engine). All packages include SSL, analytics, free domain and hosting (1 year), and 6 months post-delivery support. [View pricing](https://rabnexus.com/#pricing-section)
 
 ## Contact
 
-- Email: [hello@rabnix.com](mailto:hello@rabnix.com)
-- [Book a session](https://rabnix.com/#booking-section)
-- [Submit an inquiry](https://rabnix.com/#contact-section)
+- Email: [hello@rabnexus.com](mailto:hello@rabnexus.com)
+- [Book a session](https://rabnexus.com/#booking-section)
+- [Submit an inquiry](https://rabnexus.com/#contact-section)

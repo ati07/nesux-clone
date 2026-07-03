@@ -1,6 +1,6 @@
-# RABNIX — Next.js Clone
+# RABNEXUS — Next.js Clone
 
-A pixel-close clone of the RABNIX landing page, rebuilt in Next.js (App Router) + Tailwind CSS v4.
+A pixel-close clone of the RABNEXUS landing page, rebuilt in Next.js (App Router) + Tailwind CSS v4.
 
 ## Design tokens (matched from the source site)
 

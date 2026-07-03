@@ -11,7 +11,7 @@ const CLIENTS = [
   { name: "Novera", tag: "ENERGY / INFRASTRUCTURE", span: "md:col-span-3" },
   { name: "PulseArc", tag: "EDTECH / SCALE", span: "md:col-span-4" },
   { name: "Ironmark", tag: "LOGISTICS / AUTOMATION", span: "md:col-span-4" },
-  { name: "Solara", tag: "RETAIL / ANALYTICS", span: "md:col-span-4" },
+  { name: "Innova Tech AI", tag: "AI / TECHNOLOGY", span: "md:col-span-4" },
   { name: "Zentra", tag: "GOV / SECURITY", span: "md:col-span-6" },
   { name: "BeaconX", tag: "MEDIA / STREAMING", span: "md:col-span-6" },
 ];
@@ -40,7 +40,7 @@ export default function Clients() {
             </h2>
             <p className="text-zinc-500 text-sm max-w-xl mx-auto">
               Leading organizations across defense, finance, health, and
-              infrastructure rely on RABNIX systems for mission-critical
+              infrastructure rely on RABNEXUS systems for mission-critical
               operations.
             </p>
           </div>

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://rabnix.com";
+  const baseUrl = "https://rabnexus.com";
 
   // All sections on the single-page site
   const sections = [

@@ -12,7 +12,7 @@ export default function Logo({ className = "", showTagline = false, iconOnly = f
       {iconOnly ? (
         <Image
           src="/robix logo (1).png"
-          alt="RABNIX"
+          alt="RABNEXUS"
           width={32}
           height={32}
           className="h-8 w-8 object-contain"
@@ -20,11 +20,11 @@ export default function Logo({ className = "", showTagline = false, iconOnly = f
         />
       ) : (
         <Image
-          src="/Full Logo.png"
-          alt="RABNIX"
-          width={showTagline ? 240 : 200}
-          height={showTagline ? 56 : 48}
-          className={showTagline ? "h-14 object-contain" : "h-10 md:h-12 object-contain"}
+          src="/Rabnexus_logo.png"
+          alt="RABNEXUS"
+          width={showTagline ? 300 : 260}
+          height={showTagline ? 68 : 60}
+          className={showTagline ? "h-16 object-contain" : "h-14 md:h-16 object-contain"}
           priority
         />
       )}

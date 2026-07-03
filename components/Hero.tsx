@@ -119,7 +119,7 @@ export default function Hero() {
 
           <ScrollReveal variant="fade-up" delay={400}>
             <p className="text-zinc-400 font-mono-agency text-sm md:text-base leading-relaxed max-w-xl">
-              RABNIX is an elite digital engineering firm. We construct bespoke
+              RABNEXUS is an elite digital engineering firm. We construct bespoke
               websites, tailored CRM platforms, robust custom software, and
               complex AI Agent workforces that operate at peak efficiency.
             </p>

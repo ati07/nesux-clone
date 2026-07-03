@@ -2,13 +2,13 @@ export default function JsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "RABNIX",
-    url: "https://rabnix.com",
-    logo: "https://rabnix.com/Full Logo.png",
+    name: "RABNEXUS",
+    url: "https://rabnexus.com",
+    logo: "https://rabnexus.com/Rabnexus_logo.png",
     description:
       "An elite digital engineering firm constructing bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces.",
     slogan: "High-Precision Digital Engines",
-    email: "hello@rabnix.com",
+    email: "hello@rabnexus.com",
     foundingDate: "2025",
     datePublished: "2025-01-01T00:00:00Z",
     dateModified: "2026-07-02T00:00:00Z",

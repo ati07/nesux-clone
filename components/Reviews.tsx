@@ -16,7 +16,7 @@ interface Review {
 const REVIEWS: Review[] = [
   {
     quote:
-      "RABNIX rebuilt our entire client-facing platform from the ground up. Load times dropped 340%, and our conversion pipeline went from fragmented to fully autonomous. They didn't just build software — they engineered a revenue machine.",
+      "RABNEXUS rebuilt our entire client-facing platform from the ground up. Load times dropped 340%, and our conversion pipeline went from fragmented to fully autonomous. They didn't just build software — they engineered a revenue machine.",
     author: "Marcus V.",
     role: "CTO",
     company: "Aetheris Defense",
@@ -25,7 +25,7 @@ const REVIEWS: Review[] = [
   },
   {
     quote:
-      "The AI agent workforce RABNIX deployed handles 70% of our tier-1 support inquiries autonomously. Our team went from drowning in tickets to focusing on strategic development. ROI was realized within the first 45 days.",
+      "The AI agent workforce RABNEXUS deployed handles 70% of our tier-1 support inquiries autonomously. Our team went from drowning in tickets to focusing on strategic development. ROI was realized within the first 45 days.",
     author: "Sarah Chen",
     role: "VP of Operations",
     company: "Cypra Health",
@@ -34,7 +34,7 @@ const REVIEWS: Review[] = [
   },
   {
     quote:
-      "We approached RABNIX for a custom CRM. What we got was a complete operational ecosystem — sales pipeline, client portal, real-time analytics, and automated reporting. Our deal velocity increased by 28% in one quarter.",
+      "We approached RABNEXUS for a custom CRM. What we got was a complete operational ecosystem — sales pipeline, client portal, real-time analytics, and automated reporting. Our deal velocity increased by 28% in one quarter.",
     author: "James Okonkwo",
     role: "CEO",
     company: "Ironmark Logistics",
@@ -43,7 +43,7 @@ const REVIEWS: Review[] = [
   },
   {
     quote:
-      "Their intake-to-deployment pipeline is remarkable. RABNIX took our vague concept, architectured a complete spec within a week, and delivered ahead of schedule. This is what happens when you hire engineers who actually understand systems.",
+      "Their intake-to-deployment pipeline is remarkable. RABNEXUS took our vague concept, architectured a complete spec within a week, and delivered ahead of schedule. This is what happens when you hire engineers who actually understand systems.",
     author: "Elena Torres",
     role: "Director of Product",
     company: "PulseArc EdTech",
@@ -52,16 +52,16 @@ const REVIEWS: Review[] = [
   },
   {
     quote:
-      "We'd burned through three agencies before RABNIX. Everyone else sold us templates. RABNIX sold us architecture. Our platform handles 10× the traffic we originally spec'd with zero degradation. They over-deliver by default.",
+      "We'd burned through three agencies before RABNEXUS. Everyone else sold us templates. RABNEXUS sold us architecture. Our platform handles 10× the traffic we originally spec'd with zero degradation. They over-deliver by default.",
     author: "David Kim",
     role: "Founder & CEO",
-    company: "Solara Retail Analytics",
+    company: "Innova Tech AI",
     rating: 4,
     tags: ["Digital Marketing", "Infrastructure"],
   },
   {
     quote:
-      "The SOC-2 compliance layer and enterprise security architecture RABNIX implemented gave our board exactly the confidence they needed. External auditors were impressed. In 8 years, I haven't seen a cleaner deployment.",
+      "The SOC-2 compliance layer and enterprise security architecture RABNEXUS implemented gave our board exactly the confidence they needed. External auditors were impressed. In 8 years, I haven't seen a cleaner deployment.",
     author: "Priya Sharma",
     role: "CISO",
     company: "Zentra Government Solutions",
