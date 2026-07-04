@@ -3,43 +3,43 @@ import "./globals.css";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import JsonLd from "@/components/JsonLd";
 
-const BASE_URL = "https://rabnexus.com";
+const BASE_URL = "https://rabnix.com";
 
 export const metadata: Metadata = {
   title: {
-    default: "RABNEXUS — High-Precision Digital Engines",
-    template: "%s | RABNEXUS",
+    default: "RABNIX — High-Precision Digital Engines",
+    template: "%s | RABNIX",
   },
   description:
-    "RABNEXUS is an elite digital engineering firm. We construct bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces that operate at peak efficiency.",
+    "RABNIX is an elite digital engineering firm. We construct bespoke websites, tailored CRM platforms, robust custom software, and complex AI Agent workforces that operate at peak efficiency.",
   metadataBase: new URL(BASE_URL),
   icons: {
-    icon: "/robix logo (1).png",
-    shortcut: "/robix logo (1).png",
+    icon: "/robix logo.png",
+    shortcut: "/robix logo.png",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "RABNEXUS",
-    title: "RABNEXUS — High-Precision Digital Engines",
+    siteName: "RABNIX",
+    title: "RABNIX — High-Precision Digital Engines",
     description:
-      "Bespoke websites, CRM platforms, custom software, and AI Agent workforces engineered for peak efficiency.",
+      "RABNIX is an elite digital engineering firm. We build bespoke websites, CRM platforms, custom software, and AI Agent workforces engineered for peak efficiency.",
     url: BASE_URL,
     images: [
       {
-        url: "/robix logo (1).png",
-        width: 203,
-        height: 206,
-        alt: "RABNEXUS — High-Precision Digital Engines",
+        url: "/rabnexus-og.svg",
+        width: 1200,
+        height: 630,
+        alt: "RABNIX — Elite Digital Engineering Firm",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RABNEXUS — High-Precision Digital Engines",
+    title: "RABNIX — High-Precision Digital Engines",
     description:
-      "Bespoke websites, CRM platforms, custom software, and AI Agent workforces engineered for peak efficiency.",
-    images: ["/robix logo (1).png"],
+      "RABNIX is an elite digital engineering firm. We build bespoke websites, CRM platforms, custom software, and AI Agent workforces.",
+    images: ["/rabnexus-og.svg"],
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     "automation",
     "AI automation",
     "bespoke websites",
-    "RABNEXUS",
+    "RABNIX",
   ],
   alternates: {
     canonical: BASE_URL,

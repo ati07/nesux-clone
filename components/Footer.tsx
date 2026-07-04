@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] text-zinc-700 font-mono-agency">
-          <span>© {year} RABNEXUS. ALL SYSTEMS NOMINAL.</span>
+          <span>© {year} RABNIX. ALL SYSTEMS NOMINAL.</span>
           <div className="flex items-center gap-1">
             <Terminal className="h-3 w-3 text-zinc-800" />
           </div>

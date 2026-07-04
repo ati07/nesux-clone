@@ -40,7 +40,7 @@ export default function Clients() {
             </h2>
             <p className="text-zinc-500 text-sm max-w-xl mx-auto">
               Leading organizations across defense, finance, health, and
-              infrastructure rely on RABNEXUS systems for mission-critical
+              infrastructure rely on RABNIX systems for mission-critical
               operations.
             </p>
           </div>

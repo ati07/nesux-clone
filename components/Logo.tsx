@@ -11,8 +11,8 @@ export default function Logo({ className = "", showTagline = false, iconOnly = f
     <a href="#" className={`block ${className}`}>
       {iconOnly ? (
         <Image
-          src="/robix logo (1).png"
-          alt="RABNEXUS"
+          src="/robix logo.png"
+          alt="RABNIX"
           width={32}
           height={32}
           className="h-8 w-8 object-contain"
@@ -20,8 +20,8 @@ export default function Logo({ className = "", showTagline = false, iconOnly = f
         />
       ) : (
         <Image
-          src="/Rabnexus_logo.png"
-          alt="RABNEXUS"
+          src="/Full_Rabnix_Logo.png"
+          alt="RABNIX"
           width={showTagline ? 300 : 260}
           height={showTagline ? 68 : 60}
           className={showTagline ? "h-16 object-contain" : "h-14 md:h-16 object-contain"}

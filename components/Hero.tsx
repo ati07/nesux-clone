@@ -107,6 +107,11 @@ export default function Hero() {
             </div>
           </ScrollReveal>
 
+          {/* Hidden heading for search engines and screen readers — brand disambiguation */}
+          <h2 className="sr-only">
+            RABNIX Digital Engineering Firm — Bespoke Websites, CRM, AI Agents, and Custom Software Development
+          </h2>
+
           <ScrollReveal variant="fade-up" delay={250}>
             <h1 className="font-serif-agency text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none font-light">
               We Architect
@@ -119,7 +124,7 @@ export default function Hero() {
 
           <ScrollReveal variant="fade-up" delay={400}>
             <p className="text-zinc-400 font-mono-agency text-sm md:text-base leading-relaxed max-w-xl">
-              RABNEXUS is an elite digital engineering firm. We construct bespoke
+              RABNIX is an elite digital engineering firm. We construct bespoke
               websites, tailored CRM platforms, robust custom software, and
               complex AI Agent workforces that operate at peak efficiency.
             </p>
