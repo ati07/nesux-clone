@@ -42,13 +42,15 @@ export default function ScrollReveal({
     return () => observer.disconnect();
   }, [once]);
 
-  const animationMap: Record<AnimationVariant, string> = {
-    "fade-up": "fade-up 0.7s ease-out forwards",
-    "fade-in": "fade-in 0.6s ease-out forwards",
-    "slide-left": "slide-left 0.7s ease-out forwards",
-    "slide-right": "slide-right 0.7s ease-out forwards",
-    "scale-in": "scale-in 0.5s ease-out forwards",
+  const variantStyle: Record<AnimationVariant, { name: string; duration: string }> = {
+    "fade-up": { name: "fade-up", duration: "0.7s" },
+    "fade-in": { name: "fade-in", duration: "0.6s" },
+    "slide-left": { name: "slide-left", duration: "0.7s" },
+    "slide-right": { name: "slide-right", duration: "0.7s" },
+    "scale-in": { name: "scale-in", duration: "0.5s" },
   };
+
+  const { name, duration } = variantStyle[variant];
 
   return (
     <div
@@ -56,7 +58,9 @@ export default function ScrollReveal({
       className={className}
       style={{
         opacity: 0,
-        animation: visible ? animationMap[variant] : "none",
+        animationName: visible ? name : "none",
+        animationDuration: duration,
+        animationTimingFunction: "ease-out",
         animationDelay: `${delay}ms`,
         animationFillMode: "forwards",
       }}
