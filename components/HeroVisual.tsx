@@ -72,18 +72,18 @@ export default function HeroVisual() {
       const hue = isHub
         ? 0.42 + Math.random() * 0.08
         : 0.44 + Math.random() * 0.14;
-      const sat = isHub ? 0.5 + Math.random() * 0.3 : 0.3 + Math.random() * 0.4;
+      const sat = isHub ? 0.15 + Math.random() * 0.15 : 0.2 + Math.random() * 0.3;
       const light = isHub
-        ? 0.65 + Math.random() * 0.25
-        : 0.25 + Math.random() * 0.4;
+        ? 0.2 + Math.random() * 0.15
+        : 0.15 + Math.random() * 0.25;
       const color = new THREE.Color().setHSL(hue, sat, light);
       colors[i3] = color.r;
       colors[i3 + 1] = color.g;
       colors[i3 + 2] = color.b;
 
       nodeSizes[i] = isHub
-        ? 0.3 + Math.random() * 0.35
-        : 0.08 + Math.random() * 0.15;
+        ? 0.12 + Math.random() * 0.15
+        : 0.06 + Math.random() * 0.1;
 
       // Floating velocity (very gentle)
       nodeVelocities.push({
@@ -182,12 +182,12 @@ export default function HeroVisual() {
           float alpha = core * 0.9 + glow;
 
           // Dramatic glow boost near mouse cursor
-          vec3 finalColor = vColor + vGlow * vec3(1.0, 1.2, 1.5); // bright cyan-white tint
-          float glowBoost = 1.0 + vGlow * 1.5;
+          vec3 finalColor = vColor + vGlow * vec3(0.3, 0.5, 0.7); // subtle cyan-white tint
+          float glowBoost = 1.0 + vGlow * 0.4;
           alpha *= glowBoost;
 
           // Extra outer glow ring when near cursor
-          float halo = exp(-d * 3.0) * vGlow * 0.8;
+          float halo = exp(-d * 3.0) * vGlow * 0.2;
           alpha += halo;
 
           gl_FragColor = vec4(finalColor, alpha);
@@ -224,7 +224,7 @@ export default function HeroVisual() {
 
           const hue = 0.44 + fade * 0.1;
           const sat = 0.3 + fade * 0.5;
-          const light = 0.15 + fade * 0.5;
+          const light = 0.05 + fade * 0.18;
           const baseColor = new THREE.Color().setHSL(hue, sat, light);
           lineColors.push(baseColor.r, baseColor.g, baseColor.b);
           lineColors.push(baseColor.r, baseColor.g, baseColor.b);
@@ -239,7 +239,7 @@ export default function HeroVisual() {
     const lineMaterial = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.30,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     });
