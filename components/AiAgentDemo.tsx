@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Bot, Send, Terminal } from "lucide-react";
+import { Bot, Send } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 interface Message {
@@ -33,6 +33,7 @@ export default function AiAgentDemo() {
   const [visibleLines, setVisibleLines] = useState(0);
   const [showInput, setShowInput] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // Animate initial message appearing
   useEffect(() => {
@@ -43,6 +44,13 @@ export default function AiAgentDemo() {
     }, 500);
     return () => clearTimeout(t);
   }, []);
+
+  // Focus input when it appears, without scrolling the page
+  useEffect(() => {
+    if (showInput && inputRef.current) {
+      inputRef.current.focus({ preventScroll: true });
+    }
+  }, [showInput]);
 
   // Scroll to bottom on new messages
   useEffect(() => {
@@ -198,12 +206,12 @@ export default function AiAgentDemo() {
                     className="flex gap-2"
                   >
                     <input
+                      ref={inputRef}
                       type="text"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       placeholder="Describe a task you'd like automated..."
                       className="flex-1 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-xs font-mono-agency text-zinc-300 placeholder:text-zinc-600 focus:outline-none focus:border-[#D4FF00]/40 transition-colors"
-                      autoFocus
                     />
                     <button
                       type="submit"
