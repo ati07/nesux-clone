@@ -33,6 +33,7 @@ export default function AiAgentDemo() {
   const [visibleLines, setVisibleLines] = useState(0);
   const [showInput, setShowInput] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const hasMounted = useRef(false);
 
   // Animate initial message appearing
   useEffect(() => {
@@ -44,8 +45,12 @@ export default function AiAgentDemo() {
     return () => clearTimeout(t);
   }, []);
 
-  // Scroll to bottom on new messages
+  // Scroll chat to bottom on new messages — skip initial mount
   useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
 
