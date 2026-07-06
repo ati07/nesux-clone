@@ -2,11 +2,15 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Clients from "@/components/Clients";
 import Capabilities from "@/components/Capabilities";
+import AiAgentDemo from "@/components/AiAgentDemo";
+import IndustryCases from "@/components/IndustryCases";
+import ProcessTimeline from "@/components/ProcessTimeline";
 import Pricing from "@/components/Pricing";
 import Reviews from "@/components/Reviews";
+import RoiCalculator from "@/components/RoiCalculator";
 import Scheduler from "@/components/Scheduler";
 import Intake from "@/components/Intake";
-import TerminalConsole from "@/components/TerminalConsole";
+import WorkflowDiff from "@/components/WorkflowDiff";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,11 +20,15 @@ export default function Home() {
       <Hero />
       <Clients />
       <Capabilities />
+      <AiAgentDemo />
+      <IndustryCases />
+      <ProcessTimeline />
       <Pricing />
       <Reviews />
+      <RoiCalculator />
       <Scheduler />
       <Intake />
-      <TerminalConsole />
+      <WorkflowDiff />
       <Footer />
     </div>
   );

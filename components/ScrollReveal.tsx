@@ -35,7 +35,7 @@ export default function ScrollReveal({
           setVisible(false);
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -80px 0px" }
     );
 
     observer.observe(el);
@@ -63,6 +63,7 @@ export default function ScrollReveal({
         animationTimingFunction: "ease-out",
         animationDelay: `${delay}ms`,
         animationFillMode: "forwards",
+        willChange: visible ? "auto" : "opacity, transform",
       }}
     >
       {children}

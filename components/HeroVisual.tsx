@@ -247,11 +247,23 @@ export default function HeroVisual() {
     const lineSegments = new THREE.LineSegments(lineGeometry, lineMaterial);
     scene.add(lineSegments);
 
+    /* ──── Visibility detection — pause when off-screen ──── */
+    let isVisible = true;
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => { isVisible = entry.isIntersecting; },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(container);
+
     /* ──── Animation ──── */
     let rafId: number;
     let time = 0;
 
     const animate = () => {
+      if (!isVisible || document.hidden) {
+        rafId = requestAnimationFrame(animate);
+        return;
+      }
       time += 0.008;
       nodeMaterial.uniforms.uTime.value = time;
 
@@ -290,9 +302,15 @@ export default function HeroVisual() {
     };
     window.addEventListener("resize", handleResize);
 
+    /* ──── Tab visibility ──── */
+    const handleVisChange = () => { isVisible = !document.hidden; };
+    document.addEventListener("visibilitychange", handleVisChange);
+
     /* ──── Cleanup ──── */
     return () => {
       cancelAnimationFrame(rafId);
+      visibilityObserver.disconnect();
+      document.removeEventListener("visibilitychange", handleVisChange);
       window.removeEventListener("mousemove", handleMouse);
       window.removeEventListener("resize", handleResize);
       container.removeChild(renderer.domElement);

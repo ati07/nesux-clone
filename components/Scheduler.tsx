@@ -186,7 +186,7 @@ export default function Scheduler() {
                           key={i}
                           disabled={!c.current}
                           onClick={() => c.current && setSelectedDay(c.day)}
-                          className={`py-1.5 rounded transition-all duration-200 ${
+                          className={`py-1.5 rounded transition-[color,background-color,transform] duration-200 ${
                             !c.current
                               ? "text-zinc-800 cursor-default"
                               : isSelected
@@ -239,7 +239,7 @@ export default function Scheduler() {
                         type="button"
                         key={slot}
                         onClick={() => setSelectedSlot(slot)}
-                        className={`py-3 border text-xs tracking-wider transition-all duration-200 rounded font-mono ${
+                        className={`py-3 border text-xs tracking-wider transition-[color,background-color,border-color,transform] duration-200 rounded font-mono ${
                           selectedSlot === slot
                             ? "border-[#D4FF00] text-black bg-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.25)] font-bold scale-[1.02]"
                             : "border-white/10 text-white hover:border-[#D4FF00]/50 hover:text-[#D4FF00] hover:bg-white/5"
@@ -292,7 +292,7 @@ export default function Scheduler() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-all duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-[background-color,box-shadow,opacity] duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {submitting ? "TRANSMITTING..." : "EXECUTE_SCHEDULER.MSI"}
                   </button>

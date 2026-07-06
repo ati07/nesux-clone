@@ -62,7 +62,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 pt-4">
               <a
                 href="#services-section"
-                className="group px-6 py-4 bg-white text-black font-mono-agency text-xs uppercase tracking-wider hover:bg-[#D4FF00] hover:shadow-[0_0_30px_rgba(212,255,0,0.3)] transition-all duration-300 flex items-center rounded-sm relative overflow-hidden"
+                className="group px-6 py-4 bg-white text-black font-mono-agency text-xs uppercase tracking-wider hover:bg-[#D4FF00] hover:shadow-[0_0_30px_rgba(212,255,0,0.3)] transition-[background-color,box-shadow] duration-300 flex items-center rounded-sm relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center">
                   Explore Services
@@ -71,7 +71,7 @@ export default function Hero() {
               </a>
               <a
                 href="#booking-section"
-                className="px-6 py-4 border border-white/20 text-white font-mono-agency text-xs uppercase tracking-wider hover:border-[#D4FF00] hover:text-[#D4FF00] transition-all duration-300 rounded-sm flex items-center gap-2 group"
+                className="px-6 py-4 border border-white/20 text-white font-mono-agency text-xs uppercase tracking-wider hover:border-[#D4FF00] hover:text-[#D4FF00] transition-[color,border-color] duration-300 rounded-sm flex items-center gap-2 group"
               >
                 <Radio className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 Schedule Appointment

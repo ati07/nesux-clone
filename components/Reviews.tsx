@@ -115,7 +115,7 @@ export default function Reviews() {
           <ScrollReveal variant="fade-up" delay={200} className="flex items-center gap-3 shrink-0">
             <button
               onClick={prev}
-              className="h-9 w-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-500 hover:text-[#D4FF00] hover:border-[#D4FF00]/30 transition-all duration-300"
+              className="h-9 w-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-500 hover:text-[#D4FF00] hover:border-[#D4FF00]/30 transition-[color,border-color] duration-300"
               aria-label="Previous reviews"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -126,7 +126,7 @@ export default function Reviews() {
             </span>
             <button
               onClick={next}
-              className="h-9 w-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-500 hover:text-[#D4FF00] hover:border-[#D4FF00]/30 transition-all duration-300"
+              className="h-9 w-9 rounded-lg border border-white/10 flex items-center justify-center text-zinc-500 hover:text-[#D4FF00] hover:border-[#D4FF00]/30 transition-[color,border-color] duration-300"
               aria-label="Next reviews"
             >
               <ChevronRight className="h-4 w-4" />
@@ -143,9 +143,9 @@ export default function Reviews() {
               delay={150 + i * 100}
               className="h-full"
             >
-              <div className="glass rounded-lg p-8 border border-white/10 hover:border-[#D4FF00]/20 transition-all duration-500 group h-full flex flex-col relative overflow-hidden">
+              <div className="glass rounded-lg p-8 border border-white/10 hover:border-[#D4FF00]/20 transition-[border-color] duration-500 group h-full flex flex-col relative overflow-hidden">
                 {/* Hover accent */}
-                <div className="absolute top-0 left-0 w-0 h-[1px] bg-gradient-to-r from-[#D4FF00] to-transparent group-hover:w-full transition-all duration-500" />
+                <div className="absolute top-0 left-0 w-0 h-[1px] bg-gradient-to-r from-[#D4FF00] to-transparent group-hover:w-full transition-[width] duration-500" />
 
                 <Quote className="h-6 w-6 text-[#D4FF00]/20 group-hover:text-[#D4FF00]/40 transition-colors duration-300 mb-4 shrink-0" />
 
@@ -200,7 +200,7 @@ export default function Reviews() {
               <button
                 key={p}
                 onClick={() => setCurrentPage(p)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full transition-[width,background-color] duration-300 ${
                   p === currentPage
                     ? "w-8 bg-[#D4FF00]"
                     : "w-1.5 bg-zinc-700 hover:bg-zinc-500"

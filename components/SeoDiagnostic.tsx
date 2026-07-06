@@ -205,6 +205,20 @@ export default function SeoDiagnostic() {
                     style={{ width: `${metric.target}%` }}
                   />
                 </div>
+                {/* LLM model badges — only for LLM metric */}
+                {metric.key === "llm" && (
+                  <div className="flex items-center gap-1.5 mt-1.5">
+                    {["Claude", "ChatGPT", "Gemini"].map((model) => (
+                      <span
+                        key={model}
+                        className="text-[8px] font-mono-agency px-1.5 py-0.5 rounded-sm bg-zinc-800/60 border border-zinc-700/50 text-zinc-500"
+                      >
+                        {model}
+                      </span>
+                    ))}
+                    <span className="text-[8px] text-zinc-700 ml-auto">+3 models</span>
+                  </div>
+                )}
               </div>
             ))}
 

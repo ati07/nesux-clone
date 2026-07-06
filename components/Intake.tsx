@@ -100,6 +100,26 @@ export default function Intake() {
               <span>Direct alert routing to on-call developers</span>
             </div>
           </div>
+
+          {/* ── What You Own ── */}
+          <div className="pt-6 border-t border-white/5 space-y-4">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold block">
+              What You Own After We&rsquo;re Done
+            </span>
+            <div className="space-y-3">
+              {[
+                "Full source code, handed over on delivery",
+                "Agent configs and prompts, documented and editable",
+                "Admin access to every connected tool and API key",
+                "No dependency on RABNIX to keep it running",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2.5 text-xs text-zinc-400">
+                  <span className="text-[#D4FF00] mt-0.5 shrink-0">✓</span>
+                  <span className="font-mono-agency">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </ScrollReveal>
 
         {/* Right form */}
@@ -111,7 +131,7 @@ export default function Intake() {
                   <label className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold block flex items-center gap-2">
                     <User className="h-3 w-3" /> Your Name
                   </label>
-                  <div className="relative border-b border-white/20 focus-within:border-[#D4FF00] transition-all duration-300">
+                  <div className="relative border-b border-white/20 focus-within:border-[#D4FF00] transition-[border-color] duration-300">
                     <input
                       required
                       type="text"
@@ -120,14 +140,14 @@ export default function Intake() {
                       placeholder="John Doe"
                       className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                     />
-                    <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#D4FF00] transition-all duration-300 focus-within:w-full" />
+                    <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#D4FF00] transition-[width] duration-300 focus-within:w-full" />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold block flex items-center gap-2">
                     <Mail className="h-3 w-3" /> Secure Email
                   </label>
-                  <div className="relative border-b border-white/20 focus-within:border-[#D4FF00] transition-all duration-300">
+                  <div className="relative border-b border-white/20 focus-within:border-[#D4FF00] transition-[border-color] duration-300">
                     <input
                       required
                       type="email"
@@ -136,7 +156,7 @@ export default function Intake() {
                       placeholder="john@organization.com"
                       className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                     />
-                    <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#D4FF00] transition-all duration-300 focus-within:w-full" />
+                    <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#D4FF00] transition-[width] duration-300 focus-within:w-full" />
                   </div>
                 </div>
               </div>
@@ -146,7 +166,7 @@ export default function Intake() {
                   <label className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold block flex items-center gap-2">
                     <Building2 className="h-3 w-3" /> Company Name
                   </label>
-                  <div className="relative border-b border-white/20 focus-within:border-[#D4FF00] transition-all duration-300">
+                  <div className="relative border-b border-white/20 focus-within:border-[#D4FF00] transition-[border-color] duration-300">
                     <input
                       type="text"
                       value={company}
@@ -154,7 +174,7 @@ export default function Intake() {
                       placeholder="Corp Inc. (Optional)"
                       className="bg-transparent border-0 rounded-none px-0 py-3 font-mono-agency text-sm focus:outline-none w-full placeholder:text-zinc-600"
                     />
-                    <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#D4FF00] transition-all duration-300 focus-within:w-full" />
+                    <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#D4FF00] transition-[width] duration-300 focus-within:w-full" />
                   </div>
                 </div>
                 <div className="space-y-2">
@@ -188,7 +208,7 @@ export default function Intake() {
                       type="button"
                       key={b}
                       onClick={() => setBudget(b)}
-                      className={`py-3 border text-xs tracking-wider transition-all duration-200 rounded font-mono ${
+                      className={`py-3 border text-xs tracking-wider transition-[color,background-color,border-color,transform] duration-200 rounded font-mono ${
                         budget === b
                           ? "border-[#D4FF00] text-black bg-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.25)] font-bold scale-[1.02]"
                           : "border-white/10 text-white hover:border-[#D4FF00]/50 hover:text-[#D4FF00] hover:bg-white/5"
@@ -204,7 +224,7 @@ export default function Intake() {
                 <label className="text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold block flex items-center gap-2">
                   <FileText className="h-3 w-3" /> Project Architectural Requirements
                 </label>
-                <div className="relative border border-white/20 focus-within:border-[#D4FF00] rounded transition-all duration-300 p-0.5">
+                <div className="relative border border-white/20 focus-within:border-[#D4FF00] rounded transition-[border-color] duration-300 p-0.5">
                   <textarea
                     required
                     value={message}
@@ -224,7 +244,7 @@ export default function Intake() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-all duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full py-4 font-bold uppercase tracking-wider text-xs transition-[background-color,box-shadow,opacity] duration-300 rounded bg-white text-black hover:bg-[#D4FF00] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <Send className="h-3 w-3" />
                   {submitting ? "TRANSMITTING..." : "TRANSMIT_INQUIRY.SH"}

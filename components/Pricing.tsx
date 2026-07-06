@@ -227,7 +227,7 @@ export default function Pricing() {
               <button
                 key={tier.id}
                 onClick={() => setSelectedTier(tier)}
-                className={`relative px-5 py-3 text-xs tracking-wider uppercase font-bold transition-all duration-300 rounded ${
+                className={`relative px-5 py-3 text-xs tracking-wider uppercase font-bold transition-[color,background-color,border-color] duration-300 rounded ${
                   selectedTier.id === tier.id
                     ? "bg-[#D4FF00] text-black shadow-[0_0_20px_rgba(212,255,0,0.25)] scale-105"
                     : "bg-transparent text-zinc-500 border border-white/10 hover:border-white/30 hover:text-white"
@@ -345,7 +345,7 @@ export default function Pricing() {
               {/* CTA */}
               <a
                 href="#contact-section"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#D4FF00] text-black text-xs uppercase tracking-wider font-bold rounded hover:shadow-[0_0_30px_rgba(212,255,0,0.35)] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#D4FF00] text-black text-xs uppercase tracking-wider font-bold rounded hover:shadow-[0_0_30px_rgba(212,255,0,0.35)] transition-[box-shadow] duration-300"
               >
                 {selectedTier.cta}
               </a>
@@ -373,7 +373,7 @@ export default function Pricing() {
                     key={f.label}
                     className="text-center space-y-3 group cursor-default"
                   >
-                    <div className="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-[#D4FF00]/5 border border-[#D4FF00]/10 group-hover:bg-[#D4FF00]/10 group-hover:border-[#D4FF00]/20 transition-all duration-300">
+                    <div className="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-[#D4FF00]/5 border border-[#D4FF00]/10 group-hover:bg-[#D4FF00]/10 group-hover:border-[#D4FF00]/20 transition-[background-color,border-color] duration-300">
                       <Icon className="h-4 w-4 text-[#D4FF00]/70 group-hover:text-[#D4FF00] transition-colors" />
                     </div>
                     <span className="block text-[11px] text-zinc-500 font-mono-agency tracking-wider group-hover:text-zinc-300 transition-colors">

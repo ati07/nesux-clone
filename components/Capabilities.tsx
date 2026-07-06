@@ -95,7 +95,7 @@ export default function Capabilities() {
                   className="group relative"
                   glowColor="rgba(212,255,0,0.12)"
                 >
-                  <div className="bg-[#121212] border border-white/10 p-8 hover:border-[#D4FF00]/30 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-80 rounded-lg">
+                  <div className="bg-[#121212] border border-white/10 p-8 hover:border-[#D4FF00]/30 transition-[border-color,background-color] duration-500 relative overflow-hidden flex flex-col justify-between h-80 rounded-lg">
                     {/* Animated gradient top border */}
                     <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4FF00] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-0" />
 
@@ -107,7 +107,7 @@ export default function Capabilities() {
                         <span className="text-xs font-mono text-zinc-600 group-hover:text-[#D4FF00]/60 tracking-widest transition-colors">
                           {s.mono}
                         </span>
-                        <Icon className="h-5 w-5 text-zinc-600 group-hover:text-[#D4FF00] transition-all duration-300 group-hover:scale-110" />
+                        <Icon className="h-5 w-5 text-zinc-600 group-hover:text-[#D4FF00] transition-[color,transform] duration-300 group-hover:scale-110" />
                       </div>
                       <h3 className="font-serif-agency text-3xl mb-4 group-hover:text-[#D4FF00] transition-colors">
                         {s.title}
@@ -140,6 +140,31 @@ export default function Capabilities() {
             );
           })}
         </div>
+
+        {/* ── Stack Badges ── */}
+        <ScrollReveal variant="fade-up" delay={600}>
+          <div className="pt-8 border-t border-white/5">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px flex-1 bg-gradient-to-r from-white/5 to-transparent" />
+              <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-600 font-mono-agency">
+                Connects With
+              </span>
+              <div className="h-px flex-1 bg-gradient-to-l from-white/5 to-transparent" />
+            </div>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {["Shopify", "Stripe", "WhatsApp", "Google Calendar", "Slack", "Claude API", "OpenAI", "Notion", "Salesforce", "HubSpot", "Mailchimp", "Zoom"].map(
+                (tool) => (
+                  <span
+                    key={tool}
+                    className="text-xs font-mono-agency text-zinc-500 border border-zinc-800 bg-zinc-900/50 px-3.5 py-2 rounded-md hover:border-[#D4FF00]/30 hover:text-zinc-300 transition-[color,border-color] duration-300"
+                  >
+                    {tool}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
