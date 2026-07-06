@@ -33,7 +33,6 @@ export default function AiAgentDemo() {
   const [visibleLines, setVisibleLines] = useState(0);
   const [showInput, setShowInput] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   // Animate initial message appearing
   useEffect(() => {
@@ -44,13 +43,6 @@ export default function AiAgentDemo() {
     }, 500);
     return () => clearTimeout(t);
   }, []);
-
-  // Focus input when it appears, without scrolling the page
-  useEffect(() => {
-    if (showInput && inputRef.current) {
-      inputRef.current.focus({ preventScroll: true });
-    }
-  }, [showInput]);
 
   // Scroll to bottom on new messages
   useEffect(() => {
@@ -195,35 +187,38 @@ export default function AiAgentDemo() {
                 <div ref={chatEndRef} />
               </div>
 
-              {/* Input */}
-              {showInput && (
-                <div className="border-t border-white/5 p-3 animate-fade-in">
-                  <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      handleSend(input);
-                    }}
-                    className="flex gap-2"
+              {/* Input — always rendered, hidden until showInput */}
+              <div
+                className={`border-t border-white/5 p-3 transition-all duration-500 ${
+                  showInput
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
+              >
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSend(input);
+                  }}
+                  className="flex gap-2"
+                >
+                  <input
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Describe a task you'd like automated..."
+                    className="flex-1 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-xs font-mono-agency text-zinc-300 placeholder:text-zinc-600 focus:outline-none focus:border-[#D4FF00]/40 transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    disabled={!input.trim()}
+                    className="px-4 py-2.5 bg-[#D4FF00] text-black rounded-lg font-bold text-xs hover:bg-[#D4FF00]/90 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-1.5"
                   >
-                    <input
-                      ref={inputRef}
-                      type="text"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      placeholder="Describe a task you'd like automated..."
-                      className="flex-1 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-xs font-mono-agency text-zinc-300 placeholder:text-zinc-600 focus:outline-none focus:border-[#D4FF00]/40 transition-colors"
-                    />
-                    <button
-                      type="submit"
-                      disabled={!input.trim()}
-                      className="px-4 py-2.5 bg-[#D4FF00] text-black rounded-lg font-bold text-xs hover:bg-[#D4FF00]/90 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-1.5"
-                    >
-                      <Send className="h-3 w-3" />
-                      Send
-                    </button>
-                  </form>
-                </div>
-              )}
+                    <Send className="h-3 w-3" />
+                    Send
+                  </button>
+                </form>
+              </div>
             </div>
           </ScrollReveal>
         </div>
