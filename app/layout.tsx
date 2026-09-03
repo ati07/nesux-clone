@@ -86,6 +86,7 @@ export default function RootLayout({
         <AnimatedBackground />
         <div className="noise-overlay" />
         <main className="relative z-10">{children}</main>
+        <script src="https://ai.rabnix.com/widget.js" data-chat-key="wc_e4fa300b7d7efa86af284f84412e1e101855d522c0794fa8" async></script>
       </body>
     </html>
   );
